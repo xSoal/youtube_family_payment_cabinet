@@ -1,0 +1,75 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@import 'reset';
+
+//// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.fa-icon {
+    fill: #151873;
+}
+
+html {
+    font-size: 18px;
+}
+
+
+.input__overflow > label {
+    position: relative;
+}
+
+.input {
+    padding: 18px 20px 15px;
+    font-size: 1rem;
+    position: relative;
+}
+
+.input__title {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    bottom: 0px;
+    font-size: 0.9rem;
+    transition: .15s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+label.focused .input__title {
+    font-size: 0.55rem;
+    top: -27px;
+    left: 15px;
+    }
+
+
+.button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.inputCont {
+    margin-top: 15px;
+}
+
+.buttonCont {
+    margin-top: 0.67em;
+}
+
+
+.input__error {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}

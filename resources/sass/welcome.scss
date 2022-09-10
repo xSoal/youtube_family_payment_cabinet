@@ -1,0 +1,19 @@
+.welcome__overflow {
+    height: 100vh;
+    background-color: #fdcd42;
+    color: #2a2c2d;
+    font-size: 1.34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome__middle {
+    width: 350px;
+}
+
+.welcome__middle .input,
+.welcome__middle label {
+    width: 100%;
+}
