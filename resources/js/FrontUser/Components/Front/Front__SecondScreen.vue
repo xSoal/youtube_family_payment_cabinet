@@ -71,6 +71,7 @@ export default {
     .text {
         position: relative;
         z-index: 1;
+        padding: 25px 15px;
     }
 
 

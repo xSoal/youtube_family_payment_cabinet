@@ -39,13 +39,20 @@ class UserAdminController extends Controller
             }
         }
 
+
         foreach ($user_payments->toArray() as $m){
             $date = $m->date;
             $d = explode( "-", $date);
             $date = $d[0] . "-" . $d[1];
 
             if(isset($payments_status_of_end_month[$date])){
-                $payments_status_of_end_month[$date] += $m->amount;
+
+                foreach ($payments_status_of_end_month as $t_date => $t_m){
+                    if($date <= $t_date){
+                        $payments_status_of_end_month[$t_date] += $m->amount;
+                    }
+                }
+
             }
 
 

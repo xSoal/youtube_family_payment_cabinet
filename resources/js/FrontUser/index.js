@@ -8,7 +8,7 @@ import store from './eco/store';
 import Index from './Components/Index';
 
 // or import all icons if you don't care about bundle size
-import 'vue-awesome/icons'
+// import 'vue-awesome/icons'
 
 import Icon from 'vue-awesome/components/Icon'
 
@@ -18,7 +18,7 @@ import { DatePicker } from 'ant-design-vue';
 
 Vue.use(DatePicker);
 
-import 'ant-design-vue/dist/antd.css';
+// import 'ant-design-vue/dist/antd.css';
 
 window.API = API;
 

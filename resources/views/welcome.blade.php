@@ -28,6 +28,14 @@
     {{--        <div id="welcome">--}}
     {{--        </div>--}}
 
+    <?php
+        if(\Illuminate\Support\Facades\Auth::user()){
+            echo '<script> window.location = "/user_admin"; </script>';
+        }
+
+
+
+    ?>
     <div class="welcome__overflow">
         <div class="welcome__middle">
             <h1>Hello</h1>
