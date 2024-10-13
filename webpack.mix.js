@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const path = require('path');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -16,6 +16,14 @@ if (!mix.inProduction()) {
         devtool: 'inline-source-map'
     })
 }
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'resources/js'), 
+        },
+    },
+});
 
 
 

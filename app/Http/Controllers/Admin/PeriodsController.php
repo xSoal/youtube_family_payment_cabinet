@@ -59,9 +59,9 @@ class PeriodsController extends Controller
                 ]);
             }
         }
-
+        $log = 'periods was ' . $is_isset ? 'isset' : 'not_isset';
         self::recalculate_all_user_periods();
-        return response()->json('ok', 200);
+        return response()->json('ok ' . "$log", 200);
     }
 
 

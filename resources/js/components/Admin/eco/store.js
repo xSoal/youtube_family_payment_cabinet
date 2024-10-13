@@ -11,7 +11,9 @@ export default new Vuex.Store ({
         users: [],
         currentUserPeriods: [],
         allPayment: [],
-        startPeriodsData: null
+        startPeriodsData: null,
+        youtubePeriods: [],
+        youtubeDefaultAmount: 150
     },
 
     actions: {
@@ -118,6 +120,27 @@ export default new Vuex.Store ({
             const paymentIndex = ctx.state.allPayment.findIndex(el => el.id === paymentId);
             ctx.state.allPayment.splice(paymentIndex, 1);
         },
+
+
+        async getYoutubePeriods(ctx) {
+            const res = await API.get(`/get_youtube_periods`);
+            ctx.state.youtubePeriods = res.data;
+        },
+
+        async addYoutubePeriod(ctx, {yearMonthDate, amount}) {
+            const res = await API.post(`/add_youtube_period`, {
+                yearMonthDate,
+                amount
+            });
+            
+            ctx.dispatch('getYoutubePeriods');
+            return true;
+        },
+
+        async deleteYoutubePeriod(ctx, periodId){
+            const res = await API.delete(`/delete_youtube_period/${periodId}`);
+            ctx.dispatch('getYoutubePeriods');
+        }
 
 
     },

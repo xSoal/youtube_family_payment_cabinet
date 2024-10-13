@@ -53,7 +53,12 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::delete('/delete_user_payment/{payment_id}', [App\Http\Controllers\Admin\UserPaymentsController::class, 'delete_user_payment'])->name('delete_user_payment');
 
 
+    Route::get('/get_youtube_periods', [App\Http\Controllers\Admin\YoutubeController::class, 'get_youtube_periods'])->name('get_youtube_periods');
+    Route::post('/add_youtube_period', [App\Http\Controllers\Admin\YoutubeController::class, 'add_youtube_period'])->name('add_youtube_period');
+    Route::delete('/delete_youtube_period/{period_id}', [App\Http\Controllers\Admin\YoutubeController::class, 'delete_youtube_period'])->name('delete_youtube_period');
 
+
+    
 });
 
 
